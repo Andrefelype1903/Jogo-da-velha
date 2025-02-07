@@ -89,14 +89,14 @@ const LinhaVencedorDiagonal = (x,y,z,w) => {
  */
 
 
-/* LinhaVencedorHorizontal(45,24,255)
+LinhaVencedorHorizontal(45,24,255)
 LinhaVencedorHorizontal(45,65,255)
 LinhaVencedorHorizontal(45,106,255)
 LinhaVencedorVertical(92,0,135)
 LinhaVencedorVertical(150,0,135)
 LinhaVencedorVertical(210,0,135)
 LinhaVencedorDiagonal(54,0,248,133)
-LinhaVencedorDiagonal(246,0,57,130) */
+LinhaVencedorDiagonal(246,0,57,130)
 
 
 
