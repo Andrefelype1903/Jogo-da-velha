@@ -67,7 +67,7 @@ img {
     font-weight: bold;
     width: 85%;
     height: 6%;
-    padding: 30px;
+    padding: 60px;
     border-radius: 20px;
     z-index: 1000;
 }
@@ -102,7 +102,12 @@ footer img {
     }
 
     .vencedor {
-        background-color: none;
+        padding: 100px;
+    }
+
+    .canvas {
+        width: 650px;
+        height: 480px;
     }
 
 }

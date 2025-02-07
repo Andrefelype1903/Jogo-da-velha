@@ -106,6 +106,7 @@ const TelaVencedor = (v) => {
         DivVencedor.classList.add('vencedor');
         document.querySelector('.rodape')
         document.body.insertBefore(DivVencedor, rodape);
+
         if(vez === 1){
             DivVencedor.style.backgroundColor = 'rgba(255,0,0,1)'
         } else if(vez === 0) {
