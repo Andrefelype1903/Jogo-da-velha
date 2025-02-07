@@ -18,10 +18,16 @@ body {
 .tilulo {
     font-size: 40px;
     padding-bottom: 20px;
+    margin-bottom: 20px;
 }
 
 img {
     width: 40px;
+}
+
+.corpo {
+    max-width: 90vw;
+    max-height: 90vw;
 }
 
 .conteiner {
@@ -39,8 +45,6 @@ img {
     align-items: center;
     justify-content: center;
     background-color: white;
-    width: 150px;
-    height: 150px;
     font-size: 100px;
     cursor: pointer;
 }
@@ -89,9 +93,23 @@ footer img {
 @media (width <= 700px) {
 
     .conteiner {
-    
+        width: 90vw;
+        height: 90vh;
     }
 
-    
-    
+    .campo {
+        font-size: 70px;
+    }
+
+    .vencedor {
+        background-color: none;
+    }
+
+}
+
+@media (width >= 700px) {
+    .campo {
+        width: 150px;
+        height: 150px;
+    }
 }
