@@ -89,14 +89,14 @@ const LinhaVencedorDiagonal = (x,y,z,w) => {
  */
 
 
-LinhaVencedorHorizontal(45,24,255)
+/* LinhaVencedorHorizontal(45,28,255)
 LinhaVencedorHorizontal(45,65,255)
 LinhaVencedorHorizontal(45,106,255)
 LinhaVencedorVertical(92,0,135)
 LinhaVencedorVertical(150,0,135)
 LinhaVencedorVertical(210,0,135)
 LinhaVencedorDiagonal(54,0,248,133)
-LinhaVencedorDiagonal(246,0,57,130)
+LinhaVencedorDiagonal(246,0,57,130) */
 
 
 
@@ -135,7 +135,7 @@ Campo1.addEventListener('click', () => {
         
         if(Campo1.textContent === Campo2.textContent && Campo3.textContent === Campo1.textContent) {
 
-            LinhaVencedorHorizontal(45,24,255)
+            LinhaVencedorHorizontal(45,28,255)
 
         } else if(Campo1.textContent === Campo4.textContent && Campo1.textContent === Campo7.textContent) {
 
@@ -171,7 +171,7 @@ Campo2.addEventListener('click', () => {
 
             if(Campo1.textContent === Campo2.textContent && Campo3.textContent === Campo1.textContent) {
 
-                LinhaVencedorHorizontal(45,24,255)
+                LinhaVencedorHorizontal(45,28,255)
 
             } else if(Campo2.textContent === Campo5.textContent && Campo8.textContent === Campo2.textContent) {
 
@@ -203,7 +203,7 @@ Campo3.addEventListener('click', () => {
     
             if(Campo1.textContent === Campo2.textContent && Campo3.textContent === Campo1.textContent) {
 
-                LinhaVencedorHorizontal(45,24,255)
+                LinhaVencedorHorizontal(45,28,255)
 
             } else if(Campo3.textContent === Campo6.textContent && Campo9.textContent === Campo3.textContent) {
 
@@ -237,7 +237,7 @@ Campo4.addEventListener('click', () => {
          
             if(Campo4.textContent === Campo5.textContent && Campo4.textContent === Campo6.textContent) {
 
-                LinhaVencedorHorizontal(45,65,255)
+                LinhaVencedorHorizontal(45,69,255)
 
             } else if(Campo4.textContent === Campo1.textContent && Campo4.textContent === Campo7.textContent) {
 
@@ -269,7 +269,7 @@ Campo5.addEventListener('click', () => {
 
             if(Campo4.textContent === Campo5.textContent && Campo5.textContent === Campo6.textContent) {
 
-                LinhaVencedorHorizontal(45,65,255)
+                LinhaVencedorHorizontal(45,69,255)
   
             } else if(Campo2.textContent === Campo5.textContent && Campo2.textContent === Campo8.textContent ){
 
@@ -309,7 +309,7 @@ Campo6.addEventListener('click', () => {
 
             if(Campo4.textContent === Campo5.textContent && Campo4.textContent === Campo6.textContent) {
 
-                LinhaVencedorHorizontal(45,65,255)
+                LinhaVencedorHorizontal(45,69,255)
 
             } else if(Campo3.textContent === Campo6.textContent && Campo3.textContent === Campo9.textContent) {
 
@@ -341,7 +341,7 @@ Campo7.addEventListener('click', () => {
 
             if(Campo7.textContent === Campo8.textContent && Campo7.textContent === Campo9.textContent) {
 
-                LinhaVencedorHorizontal(45,106,255)
+                LinhaVencedorHorizontal(45,110,255)
 
             } else if(Campo1.textContent === Campo4.textContent && Campo1.textContent === Campo7.textContent) {
 
@@ -377,7 +377,7 @@ Campo8.addEventListener('click', () => {
 
             if(Campo7.textContent === Campo8.textContent && Campo7.textContent === Campo9.textContent) {
 
-                LinhaVencedorHorizontal(45,106,255)
+                LinhaVencedorHorizontal(45,110,255)
 
             } else if(Campo2.textContent === Campo5.textContent && Campo2.textContent === Campo8.textContent) {
 
@@ -409,7 +409,7 @@ Campo9.addEventListener('click', () => {
 
             if(Campo7.textContent === Campo8.textContent && Campo7.textContent === Campo9.textContent) {
 
-                LinhaVencedorHorizontal(45,106,255)
+                LinhaVencedorHorizontal(45,110,255)
 
             } else if( Campo3.textContent === Campo6.textContent && Campo3.textContent === Campo9.textContent) {
 
