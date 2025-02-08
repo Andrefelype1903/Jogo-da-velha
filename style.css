@@ -51,8 +51,6 @@ img {
 
 .canvas {
     background-color: transparent;
-    width: 800px;
-    height: 580px;
     position: absolute;
 
 }
@@ -104,12 +102,6 @@ footer img {
     .vencedor {
         padding: 100px;
     }
-
-    .canvas {
-        width: 650px;
-        height: 480px;
-    }
-
 }
 
 @media (width >= 700px) {

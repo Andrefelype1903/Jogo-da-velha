@@ -8,6 +8,8 @@ const Campo7 = document.querySelector('#campo7')
 const Campo8 = document.querySelector('#campo8')
 const Campo9 = document.querySelector('#campo9')
 
+const ElementoMain = document.querySelector('.conteiner')
+
 const rodape = document.querySelector('.rodape');
 
 let vez = 0;
@@ -15,7 +17,9 @@ let vez = 0;
 const x = 'Ⅹ'
 const o = '◯'
 
-const LinhaVencedorHorizontal = (x,y,z) => {
+let ExpessuraLinha = 5;
+
+/* const LinhaVencedorHorizontal = (x,y,z) => {
     const LinhaVenceu = document.createElement('canvas');
     LinhaVenceu.classList.add('canvas');
     document.querySelector('.rodape');
@@ -31,9 +35,31 @@ const LinhaVencedorHorizontal = (x,y,z) => {
      }
      ctx.stroke()
 
+} */
+
+const LinhaVencedorHorizontal = (x,y,z) => {
+    const LinhaVenceu = document.createElement('canvas');
+    LinhaVenceu.classList.add('canvas');
+    ElementoMain.appendChild(LinhaVenceu);
+    
+    LinhaVenceu.width = ElementoMain.offsetWidth;
+    LinhaVenceu.height = ElementoMain.offsetHeight;
+
+     let ctx = LinhaVenceu.getContext('2d');
+     ctx.beginPath();
+     ctx.moveTo(x,y);
+     ctx.lineTo(z,y);
+     if(vez === 1) {
+         ctx.strokeStyle = 'red'
+     } else if(vez  === 0) {
+        ctx.strokeStyle = 'blue'
+     }
+     ctx.lineWidth = ExpessuraLinha;
+     ctx.stroke()
+
 }
 
-const LinhaVencedorVertical = (x,y,z) => {
+/* const LinhaVencedorVertical = (x,y,z) => {
     const LinhaVenceu = document.createElement('canvas');
     LinhaVenceu.classList.add('canvas');
     document.querySelector('.rodape');
@@ -49,9 +75,32 @@ const LinhaVencedorVertical = (x,y,z) => {
     }
      ctx.stroke()
 
+} */
+
+
+const LinhaVencedorVertical = (x,y,z) => {
+    const LinhaVenceu = document.createElement('canvas');
+    LinhaVenceu.classList.add('canvas');
+    ElementoMain.appendChild(LinhaVenceu);
+    
+    LinhaVenceu.width = ElementoMain.offsetWidth;
+    LinhaVenceu.height = ElementoMain.offsetHeight;
+
+     let ctx = LinhaVenceu.getContext('2d');
+     ctx.beginPath();
+     ctx.moveTo(x,y);
+     ctx.lineTo(x,z);
+     if(vez === 1) {
+        ctx.strokeStyle = 'red'
+    } else if(vez  === 0) {
+       ctx.strokeStyle = 'blue'
+    }
+     ctx.lineWidth = ExpessuraLinha;
+     ctx.stroke()
+
 }
 
-const LinhaVencedorDiagonal = (x,y,z,w) => {
+/* const LinhaVencedorDiagonal = (x,y,z,w) => {
     const LinhaVenceu = document.createElement('canvas');
     LinhaVenceu.classList.add('canvas');
     document.querySelector('.rodape');
@@ -67,36 +116,38 @@ const LinhaVencedorDiagonal = (x,y,z,w) => {
     }
      ctx.stroke()
 
-}
-
-/* Testar posicionamento da linha do vencedor */
-
-/*     const LinhaVencedorTeste = (x,y,z,w) => {
-    const LinhaVenceu = document.createElement('canvas');
-    LinhaVenceu.classList.add('canvas');
-    document.querySelector('.rodape');
-    document.body.insertBefore(LinhaVenceu,rodape)
-     let ctx = LinhaVenceu.getContext('2d');
-     ctx.fillStyle = 'red'
-     ctx.beginPath();
-     ctx.moveTo(45,78);
-     ctx.lineTo(255,78);
-     ctx.stroke()
-
 } */
 
-/* LinhaVencedorTeste()
- */
 
+const LinhaVencedorDiagonal = (x,y,z,w) => {
+    const LinhaVenceu = document.createElement('canvas');
+    LinhaVenceu.classList.add('canvas');
+    ElementoMain.appendChild(LinhaVenceu);
+    
+    LinhaVenceu.width = ElementoMain.offsetWidth;
+    LinhaVenceu.height = ElementoMain.offsetHeight;
+     let ctx = LinhaVenceu.getContext('2d');
+     ctx.beginPath();
+     ctx.moveTo(x,y);
+     ctx.lineTo(z,w);
+     if(vez === 1) {
+        ctx.strokeStyle = 'red'
+    } else if(vez  === 0) {
+       ctx.strokeStyle = 'blue'
+    }
+     ctx.lineWidth = ExpessuraLinha;
+     ctx.stroke()
 
-/* LinhaVencedorHorizontal(45,28,255)
-LinhaVencedorHorizontal(45,65,255)
-LinhaVencedorHorizontal(45,106,255)
-LinhaVencedorVertical(92,0,135)
-LinhaVencedorVertical(150,0,135)
-LinhaVencedorVertical(210,0,135)
-LinhaVencedorDiagonal(54,0,248,133)
-LinhaVencedorDiagonal(246,0,57,130) */
+}
+
+/* LinhaVencedorHorizontal(0,76,470)
+LinhaVencedorHorizontal(0,233,470)
+LinhaVencedorHorizontal(0,392,470)
+LinhaVencedorVertical(75,0,470)
+LinhaVencedorVertical(233,0,470)
+LinhaVencedorVertical(391,0,470)
+LinhaVencedorDiagonal(0,0,470,470)
+LinhaVencedorDiagonal(466,0,0,466) */
 
 
 
@@ -136,15 +187,15 @@ Campo1.addEventListener('click', () => {
         
         if(Campo1.textContent === Campo2.textContent && Campo3.textContent === Campo1.textContent) {
 
-            LinhaVencedorHorizontal(45,28,255)
+            LinhaVencedorHorizontal(0,76,470)
 
         } else if(Campo1.textContent === Campo4.textContent && Campo1.textContent === Campo7.textContent) {
 
-            LinhaVencedorVertical(92,0,135)
+            LinhaVencedorVertical(75,0,470)
 
         } else if(Campo1.textContent === Campo5.textContent && Campo9.textContent === Campo1.textContent) {
 
-            LinhaVencedorDiagonal(54,0,248,133)
+            LinhaVencedorDiagonal(0,0,470,470)
 
         }
 
@@ -172,11 +223,11 @@ Campo2.addEventListener('click', () => {
 
             if(Campo1.textContent === Campo2.textContent && Campo3.textContent === Campo1.textContent) {
 
-                LinhaVencedorHorizontal(45,28,255)
+                LinhaVencedorHorizontal(0,76,470)
 
             } else if(Campo2.textContent === Campo5.textContent && Campo8.textContent === Campo2.textContent) {
 
-                LinhaVencedorVertical(150,0,135)
+                LinhaVencedorVertical(233,0,470)
 
             }
 
@@ -204,15 +255,15 @@ Campo3.addEventListener('click', () => {
     
             if(Campo1.textContent === Campo2.textContent && Campo3.textContent === Campo1.textContent) {
 
-                LinhaVencedorHorizontal(45,28,255)
+                LinhaVencedorHorizontal(0,76,470)
 
             } else if(Campo3.textContent === Campo6.textContent && Campo9.textContent === Campo3.textContent) {
 
-                LinhaVencedorVertical(210,0,135)
+                LinhaVencedorVertical(391,0,470)
 
             } else if(Campo3.textContent === Campo5.textContent && Campo7.textContent === Campo3.textContent) {
 
-                LinhaVencedorDiagonal(246,0,57,130)
+                LinhaVencedorDiagonal(466,0,0,466)
 
             }
         },100)
@@ -238,11 +289,11 @@ Campo4.addEventListener('click', () => {
          
             if(Campo4.textContent === Campo5.textContent && Campo4.textContent === Campo6.textContent) {
 
-                LinhaVencedorHorizontal(45,69,255)
+                LinhaVencedorHorizontal(0,233,470)
 
             } else if(Campo4.textContent === Campo1.textContent && Campo4.textContent === Campo7.textContent) {
 
-                LinhaVencedorVertical(92,0,135)
+                LinhaVencedorVertical(75,0,470)
 
             }
 
@@ -270,19 +321,19 @@ Campo5.addEventListener('click', () => {
 
             if(Campo4.textContent === Campo5.textContent && Campo5.textContent === Campo6.textContent) {
 
-                LinhaVencedorHorizontal(45,69,255)
+                LinhaVencedorHorizontal(0,233,470)
   
             } else if(Campo2.textContent === Campo5.textContent && Campo2.textContent === Campo8.textContent ){
 
-                LinhaVencedorVertical(150,0,135)
+                LinhaVencedorVertical(233,0,470)
 
             } else if(Campo1.textContent === Campo5.textContent && Campo1.textContent === Campo9.textContent) {
 
-                LinhaVencedorDiagonal(54,0,248,133)
+                LinhaVencedorDiagonal(0,0,470,470)
 
             } else if(Campo3.textContent === Campo5.textContent && Campo3.textContent === Campo7.textContent) {
 
-                LinhaVencedorDiagonal(246,0,57,130)
+                LinhaVencedorDiagonal(466,0,0,466)
 
             }
 
@@ -310,11 +361,11 @@ Campo6.addEventListener('click', () => {
 
             if(Campo4.textContent === Campo5.textContent && Campo4.textContent === Campo6.textContent) {
 
-                LinhaVencedorHorizontal(45,69,255)
+                LinhaVencedorHorizontal(0,233,470)
 
             } else if(Campo3.textContent === Campo6.textContent && Campo3.textContent === Campo9.textContent) {
 
-                LinhaVencedorVertical(210,0,135);
+                LinhaVencedorVertical(391,0,470);
 
             }
 
@@ -342,15 +393,15 @@ Campo7.addEventListener('click', () => {
 
             if(Campo7.textContent === Campo8.textContent && Campo7.textContent === Campo9.textContent) {
 
-                LinhaVencedorHorizontal(45,110,255)
+                LinhaVencedorHorizontal(0,392,470)
 
             } else if(Campo1.textContent === Campo4.textContent && Campo1.textContent === Campo7.textContent) {
 
-                LinhaVencedorVertical(92,0,135);
+                LinhaVencedorVertical(75,0,470);
 
             } else if(Campo7.textContent === Campo5.textContent && Campo7.textContent === Campo3.textContent) {
 
-                LinhaVencedorDiagonal(246,0,57,130);
+                LinhaVencedorDiagonal(466,0,0,466);
 
             }
 
@@ -378,11 +429,11 @@ Campo8.addEventListener('click', () => {
 
             if(Campo7.textContent === Campo8.textContent && Campo7.textContent === Campo9.textContent) {
 
-                LinhaVencedorHorizontal(45,110,255)
+                LinhaVencedorHorizontal(0,392,470)
 
             } else if(Campo2.textContent === Campo5.textContent && Campo2.textContent === Campo8.textContent) {
 
-                LinhaVencedorVertical(150,0,135)
+                LinhaVencedorVertical(233,0,470)
 
             }
 
@@ -410,15 +461,15 @@ Campo9.addEventListener('click', () => {
 
             if(Campo7.textContent === Campo8.textContent && Campo7.textContent === Campo9.textContent) {
 
-                LinhaVencedorHorizontal(45,110,255)
+                LinhaVencedorHorizontal(0,392,470)
 
             } else if( Campo3.textContent === Campo6.textContent && Campo3.textContent === Campo9.textContent) {
 
-                LinhaVencedorVertical(210,0,135);
+                LinhaVencedorVertical(391,0,470);
 
             } else if(Campo1.textContent === Campo5.textContent && Campo1.textContent === Campo9.textContent) {
 
-                LinhaVencedorDiagonal(54,0,248,133)
+                LinhaVencedorDiagonal(466,0,0,466)
 
             }
 
