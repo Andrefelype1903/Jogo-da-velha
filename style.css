@@ -26,8 +26,12 @@ img {
 }
 
 .corpo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     max-width: 90vw;
     max-height: 90vw;
+    padding: 10px;
 }
 
 .conteiner {
@@ -47,6 +51,8 @@ img {
     background-color: white;
     font-size: 100px;
     cursor: pointer;
+    border-radius: 1px;
+
 }
 
 .canvas {
@@ -102,6 +108,7 @@ footer img {
     .vencedor {
         padding: 100px;
     }
+
 }
 
 @media (width >= 700px) {
