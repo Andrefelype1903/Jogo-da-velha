@@ -19,6 +19,11 @@ const o = '◯'
 
 let ExpessuraLinha = 5;
 
+const CorrigeCanvas = () => {
+    LinhaVenceu.width = ElementoMain.offsetWidth;
+    LinhaVenceu.height = ElementoMain.offsetHeight;
+}
+
 /* const LinhaVencedorHorizontal = (x,y,z) => {
     const LinhaVenceu = document.createElement('canvas');
     LinhaVenceu.classList.add('canvas');
@@ -47,8 +52,8 @@ const LinhaVencedorHorizontal = (x,y,z) => {
 
      let ctx = LinhaVenceu.getContext('2d');
      ctx.beginPath();
-     ctx.moveTo(x,y);
-     ctx.lineTo(z,y);
+     ctx.moveTo(LinhaVenceu.width * x,LinhaVenceu.width * y);
+     ctx.lineTo(LinhaVenceu.width * z,LinhaVenceu.width * y);
      if(vez === 1) {
          ctx.strokeStyle = 'red'
      } else if(vez  === 0) {
@@ -88,8 +93,8 @@ const LinhaVencedorVertical = (x,y,z) => {
 
      let ctx = LinhaVenceu.getContext('2d');
      ctx.beginPath();
-     ctx.moveTo(x,y);
-     ctx.lineTo(x,z);
+     ctx.moveTo(LinhaVenceu.width * x,LinhaVenceu.width * y);
+     ctx.lineTo(LinhaVenceu.width * x,LinhaVenceu.width * z);
      if(vez === 1) {
         ctx.strokeStyle = 'red'
     } else if(vez  === 0) {
@@ -128,8 +133,8 @@ const LinhaVencedorDiagonal = (x,y,z,w) => {
     LinhaVenceu.height = ElementoMain.offsetHeight;
      let ctx = LinhaVenceu.getContext('2d');
      ctx.beginPath();
-     ctx.moveTo(x,y);
-     ctx.lineTo(z,w);
+     ctx.moveTo(LinhaVenceu.width * x,LinhaVenceu.width * y);
+     ctx.lineTo(LinhaVenceu.width * z,LinhaVenceu.width * w);
      if(vez === 1) {
         ctx.strokeStyle = 'red'
     } else if(vez  === 0) {
@@ -140,14 +145,16 @@ const LinhaVencedorDiagonal = (x,y,z,w) => {
 
 }
 
-/* LinhaVencedorHorizontal(0,76,470)
-LinhaVencedorHorizontal(0,233,470)
-LinhaVencedorHorizontal(0,392,470)
-LinhaVencedorVertical(75,0,470)
-LinhaVencedorVertical(233,0,470)
-LinhaVencedorVertical(391,0,470)
-LinhaVencedorDiagonal(0,0,470,470)
-LinhaVencedorDiagonal(466,0,0,466) */
+/* LinhaVencedorHorizontal(0,0.16,1)
+LinhaVencedorHorizontal(0,0.5,1)
+LinhaVencedorHorizontal(0,0.84,1)
+
+LinhaVencedorVertical(0.161,0,1)
+LinhaVencedorVertical(0.5,0,1)
+LinhaVencedorVertical(0.8389,0,1)
+
+LinhaVencedorDiagonal(0,0,1,1)
+LinhaVencedorDiagonal(1,0,0,1) */
 
 
 
@@ -187,15 +194,15 @@ Campo1.addEventListener('click', () => {
         
         if(Campo1.textContent === Campo2.textContent && Campo3.textContent === Campo1.textContent) {
 
-            LinhaVencedorHorizontal(0,76,470)
+            LinhaVencedorHorizontal(0,0.16,1)
 
         } else if(Campo1.textContent === Campo4.textContent && Campo1.textContent === Campo7.textContent) {
 
-            LinhaVencedorVertical(75,0,470)
+            LinhaVencedorVertical(0.161,0,1)
 
         } else if(Campo1.textContent === Campo5.textContent && Campo9.textContent === Campo1.textContent) {
 
-            LinhaVencedorDiagonal(0,0,470,470)
+            LinhaVencedorDiagonal(0,0,1,1)
 
         }
 
@@ -223,11 +230,11 @@ Campo2.addEventListener('click', () => {
 
             if(Campo1.textContent === Campo2.textContent && Campo3.textContent === Campo1.textContent) {
 
-                LinhaVencedorHorizontal(0,76,470)
+                LinhaVencedorHorizontal(0,0.16,1)
 
             } else if(Campo2.textContent === Campo5.textContent && Campo8.textContent === Campo2.textContent) {
 
-                LinhaVencedorVertical(233,0,470)
+                LinhaVencedorVertical(0.5,0,1)
 
             }
 
@@ -255,15 +262,15 @@ Campo3.addEventListener('click', () => {
     
             if(Campo1.textContent === Campo2.textContent && Campo3.textContent === Campo1.textContent) {
 
-                LinhaVencedorHorizontal(0,76,470)
+                LinhaVencedorHorizontal(0,0.16,1)
 
             } else if(Campo3.textContent === Campo6.textContent && Campo9.textContent === Campo3.textContent) {
 
-                LinhaVencedorVertical(391,0,470)
+                LinhaVencedorVertical(0.8389,0,1)
 
             } else if(Campo3.textContent === Campo5.textContent && Campo7.textContent === Campo3.textContent) {
 
-                LinhaVencedorDiagonal(466,0,0,466)
+                LinhaVencedorDiagonal(1,0,0,1)
 
             }
         },100)
@@ -289,11 +296,11 @@ Campo4.addEventListener('click', () => {
          
             if(Campo4.textContent === Campo5.textContent && Campo4.textContent === Campo6.textContent) {
 
-                LinhaVencedorHorizontal(0,233,470)
+                LinhaVencedorHorizontal(0,0.5,1)
 
             } else if(Campo4.textContent === Campo1.textContent && Campo4.textContent === Campo7.textContent) {
 
-                LinhaVencedorVertical(75,0,470)
+                LinhaVencedorVertical(0.161,0,1)
 
             }
 
@@ -321,19 +328,19 @@ Campo5.addEventListener('click', () => {
 
             if(Campo4.textContent === Campo5.textContent && Campo5.textContent === Campo6.textContent) {
 
-                LinhaVencedorHorizontal(0,233,470)
+                LinhaVencedorHorizontal(0,0.5,1)
   
             } else if(Campo2.textContent === Campo5.textContent && Campo2.textContent === Campo8.textContent ){
 
-                LinhaVencedorVertical(233,0,470)
+                LinhaVencedorVertical(0.5,0,1)
 
             } else if(Campo1.textContent === Campo5.textContent && Campo1.textContent === Campo9.textContent) {
 
-                LinhaVencedorDiagonal(0,0,470,470)
+                LinhaVencedorDiagonal(0,0,1,1)
 
             } else if(Campo3.textContent === Campo5.textContent && Campo3.textContent === Campo7.textContent) {
 
-                LinhaVencedorDiagonal(466,0,0,466)
+                LinhaVencedorDiagonal(1,0,0,1)
 
             }
 
@@ -361,11 +368,11 @@ Campo6.addEventListener('click', () => {
 
             if(Campo4.textContent === Campo5.textContent && Campo4.textContent === Campo6.textContent) {
 
-                LinhaVencedorHorizontal(0,233,470)
+                LinhaVencedorHorizontal(0,0.5,1)
 
             } else if(Campo3.textContent === Campo6.textContent && Campo3.textContent === Campo9.textContent) {
 
-                LinhaVencedorVertical(391,0,470);
+                LinhaVencedorVertical(0.8389,0,1);
 
             }
 
@@ -393,15 +400,15 @@ Campo7.addEventListener('click', () => {
 
             if(Campo7.textContent === Campo8.textContent && Campo7.textContent === Campo9.textContent) {
 
-                LinhaVencedorHorizontal(0,392,470)
+                LinhaVencedorHorizontal(0,0.84,1)
 
             } else if(Campo1.textContent === Campo4.textContent && Campo1.textContent === Campo7.textContent) {
 
-                LinhaVencedorVertical(75,0,470);
+                LinhaVencedorVertical(0.161,0,1);
 
             } else if(Campo7.textContent === Campo5.textContent && Campo7.textContent === Campo3.textContent) {
 
-                LinhaVencedorDiagonal(466,0,0,466);
+                LinhaVencedorDiagonal(1,0,0,1);
 
             }
 
@@ -429,11 +436,11 @@ Campo8.addEventListener('click', () => {
 
             if(Campo7.textContent === Campo8.textContent && Campo7.textContent === Campo9.textContent) {
 
-                LinhaVencedorHorizontal(0,392,470)
+                LinhaVencedorHorizontal(0,0.84,1)
 
             } else if(Campo2.textContent === Campo5.textContent && Campo2.textContent === Campo8.textContent) {
 
-                LinhaVencedorVertical(233,0,470)
+                LinhaVencedorVertical(0.5,0,1)
 
             }
 
@@ -461,15 +468,15 @@ Campo9.addEventListener('click', () => {
 
             if(Campo7.textContent === Campo8.textContent && Campo7.textContent === Campo9.textContent) {
 
-                LinhaVencedorHorizontal(0,392,470)
+                LinhaVencedorHorizontal(0,0.84,1)
 
             } else if( Campo3.textContent === Campo6.textContent && Campo3.textContent === Campo9.textContent) {
 
-                LinhaVencedorVertical(391,0,470);
+                LinhaVencedorVertical(0.8389,0,1);
 
             } else if(Campo1.textContent === Campo5.textContent && Campo1.textContent === Campo9.textContent) {
 
-                LinhaVencedorDiagonal(466,0,0,466)
+                LinhaVencedorDiagonal(0,0,1,1)
 
             }
 
@@ -479,6 +486,6 @@ Campo9.addEventListener('click', () => {
     Campo9.style.pointerEvents = "none"
 })
 
-
+window.addEventListener('resize', CorrigeCanvas)
 
 // tornar o código responsivo
