@@ -90,13 +90,13 @@ const LinhaVencedorDiagonal = (x,y,z,w) => {
 
 /* tester posiçoes da linha de vencedor */
 
-/* LinhaVencedorHorizontal(0,0.16,1)
+/* LinhaVencedorHorizontal(0,0.174,1)
 LinhaVencedorHorizontal(0,0.5,1)
-LinhaVencedorHorizontal(0,0.84,1)
+LinhaVencedorHorizontal(0,0.825,1)
 
-LinhaVencedorVertical(0.161,0,1)
+LinhaVencedorVertical(0.175,0,1)
 LinhaVencedorVertical(0.5,0,1)
-LinhaVencedorVertical(0.8389,0,1)
+LinhaVencedorVertical(0.8255,0,1)
 
 LinhaVencedorDiagonal(0,0,1,1)
 LinhaVencedorDiagonal(1,0,0,1) */
@@ -132,14 +132,14 @@ Campo1.addEventListener('click', () => {
     if(Campo1.textContent === Campo2.textContent && Campo3.textContent === Campo1.textContent) {
 
         setTimeout(() => {
-            LinhaVencedorHorizontal(0,0.16,1);
+            LinhaVencedorHorizontal(0,0.174,1);
             TelaVencedor(Campo1.textContent);
         },100)
 
     } else if(Campo1.textContent === Campo4.textContent && Campo1.textContent === Campo7.textContent) {
 
         setTimeout(() => {
-            LinhaVencedorVertical(0.161,0,1);
+            LinhaVencedorVertical(0.175,0,1);
             TelaVencedor(Campo1.textContent);
         },100)
 
@@ -152,6 +152,7 @@ Campo1.addEventListener('click', () => {
     }
     Campo1.style.pointerEvents = "none"
 })
+
 
 Campo2.addEventListener('click', () => {
     if(vez === 0) {
@@ -167,7 +168,7 @@ Campo2.addEventListener('click', () => {
     if(Campo1.textContent === Campo2.textContent && Campo3.textContent === Campo1.textContent) {
 
         setTimeout(() => {
-            LinhaVencedorHorizontal(0,0.16,1);
+            LinhaVencedorHorizontal(0,0.174,1);
             TelaVencedor(Campo2.textContent);
         },100)
 
@@ -196,14 +197,14 @@ Campo3.addEventListener('click', () => {
     if(Campo1.textContent === Campo2.textContent && Campo3.textContent === Campo1.textContent) {
 
         setTimeout(() => {
-            LinhaVencedorHorizontal(0,0.16,1);
+            LinhaVencedorHorizontal(0,0.174,1);
             TelaVencedor(Campo3.textContent);
         },100)
 
     } else if(Campo3.textContent === Campo6.textContent && Campo9.textContent === Campo3.textContent) {
 
         setTimeout(() => {
-            LinhaVencedorVertical(0.8389,0,1);
+            LinhaVencedorVertical(0.8255,0,1);
             TelaVencedor(Campo3.textContent);
         },100)
 
@@ -239,7 +240,7 @@ Campo4.addEventListener('click', () => {
     } else if(Campo4.textContent === Campo1.textContent && Campo4.textContent === Campo7.textContent) {
 
         setTimeout(() => {
-            LinhaVencedorVertical(0.161,0,1);
+            LinhaVencedorVertical(0.175,0,1);
             TelaVencedor(Campo4.textContent)
         },100)
     }
@@ -311,7 +312,7 @@ Campo6.addEventListener('click', () => {
     } else if(Campo3.textContent === Campo6.textContent && Campo3.textContent === Campo9.textContent) {
 
         setTimeout(() => {
-            LinhaVencedorVertical(0.8389,0,1);
+            LinhaVencedorVertical(0.8255,0,1);
             TelaVencedor(Campo6.textContent);   
         },100)
     }
@@ -333,13 +334,13 @@ Campo7.addEventListener('click', () => {
     if(Campo7.textContent === Campo8.textContent && Campo7.textContent === Campo9.textContent) {
 
         setTimeout(() => {
-            LinhaVencedorHorizontal(0,0.84,1);
+            LinhaVencedorHorizontal(0,0.825,1);
             TelaVencedor(Campo7.textContent);    
         },100)
 
     } else if(Campo1.textContent === Campo4.textContent && Campo1.textContent === Campo7.textContent) {
         setTimeout(() => {
-            LinhaVencedorVertical(0.161,0,1);
+            LinhaVencedorVertical(0.175,0,1);
             TelaVencedor(Campo7.textContent); 
         },100)
 
@@ -368,7 +369,7 @@ Campo8.addEventListener('click', () => {
     if(Campo7.textContent === Campo8.textContent && Campo7.textContent === Campo9.textContent) {
 
         setTimeout(() => {
-            LinhaVencedorHorizontal(0,0.84,1);
+            LinhaVencedorHorizontal(0,0.825,1);
             TelaVencedor(Campo8.textContent);
         },100)
 
@@ -397,14 +398,14 @@ Campo9.addEventListener('click', () => {
     if(Campo7.textContent === Campo8.textContent && Campo7.textContent === Campo9.textContent) {
 
         setTimeout(() => {
-            LinhaVencedorHorizontal(0,0.84,1);
+            LinhaVencedorHorizontal(0,0.825,1);
             TelaVencedor(Campo9.textContent);
         },100)
 
     } else if( Campo3.textContent === Campo6.textContent && Campo3.textContent === Campo9.textContent) {
 
         setTimeout(() => {
-            LinhaVencedorVertical(0.8389,0,1);
+            LinhaVencedorVertical(0.8255,0,1);
             TelaVencedor(Campo9.textContent);
         },100)
 
