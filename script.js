@@ -117,7 +117,6 @@ const TelaVencedor = (v) => {
         }
 }
 
-
 Campo1.addEventListener('click', () => {
     if(vez === 0){
         Campo1.textContent = x

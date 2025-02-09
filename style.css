@@ -57,7 +57,7 @@ img {
 }
 
 .canvas {
-    background-color: transparent);
+    background-color: transparent;
     position: absolute;
 
 }
@@ -108,7 +108,7 @@ footer img {
     }
 
     .campo {
-        font-size: 20px;
+        font-size: 80px;
     }
 
     .vencedor {
