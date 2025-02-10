@@ -8,7 +8,9 @@ const Campo7 = document.querySelector('#campo7')
 const Campo8 = document.querySelector('#campo8')
 const Campo9 = document.querySelector('#campo9')
 
-const ElementoMain = document.querySelector('.corpo')
+const ElementoMain = document.querySelector('.corpo');
+
+const conteiner = document.querySelector('conteiner')
 
 const rodape = document.querySelector('.rodape');
 
@@ -19,10 +21,10 @@ const o = '◯'
 
 let ExpessuraLinha = 5;
 
-const CorrigeCanvas = () => {
+/* const CorrigeCanvas = () => {
     LinhaVenceu.width = ElementoMain.offsetWidth;
     LinhaVenceu.height = ElementoMain.offsetHeight;
-}
+} */
 
 const LinhaVencedorHorizontal = (x,y,z) => {
     const LinhaVenceu = document.createElement('canvas');
@@ -105,16 +107,15 @@ LinhaVencedorDiagonal(1,0,0,1) */
 
 const TelaVencedor = (v) => {
     const DivVencedor = document.createElement('div');
-        DivVencedor.textContent = "Parabéns o " + v + " foi o vencedor";
-        DivVencedor.classList.add('vencedor');
-        document.querySelector('.rodape')
-        document.body.insertBefore(DivVencedor, rodape);
-
-        if(vez === 1){
-            DivVencedor.style.backgroundColor = 'rgba(255,0,0,1)'
-        } else if(vez === 0) {
-             DivVencedor.style.backgroundColor = 'rgba(0,100,255, 1)'
-        }
+    DivVencedor.textContent = "Parabéns o " + v + " foi o vencedor";
+    DivVencedor.classList.add('vencedor');
+    document.querySelector('.rodape')
+    document.body.insertBefore(DivVencedor, rodape)
+    if(vez === 1){
+        DivVencedor.style.backgroundColor = 'rgba(255,0,0,1)'
+    } else if(vez === 0) {
+            DivVencedor.style.backgroundColor = 'rgba(0,100,255, 1)'
+    }
 }
 
 Campo1.addEventListener('click', () => {

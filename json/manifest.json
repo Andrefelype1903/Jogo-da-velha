@@ -3,12 +3,12 @@
     "short_name": "Jogo da velha",
     "icons": [
         {
-            "src": "./imagens/velha.png",
+            "src": "../imagens/velha.png",
             "sizes": "192x192"
         }
     ],
 
-    "start_url": "./index.html",
+    "start_url": "../index.html",
     "display": "standalone",
     "theme_color": "#ffffff",
     "backgroud_color": "#ffffff"
