@@ -6,7 +6,11 @@ const Campo5 = document.querySelector('#campo5')
 const Campo6 = document.querySelector('#campo6')
 const Campo7 = document.querySelector('#campo7')
 const Campo8 = document.querySelector('#campo8')
-const Campo9 = document.querySelector('#campo9')
+const Campo9 = document.querySelector('#campo9');
+
+const jogo = document.querySelector('.jogo');
+
+const titulo = document.querySelector('.cabecalho')
 
 const ElementoMain = document.querySelector('.corpo');
 
@@ -106,11 +110,23 @@ LinhaVencedorDiagonal(1,0,0,1) */
 
 
 const TelaVencedor = (v) => {
+    titulo.style.display = 'none'
     const DivVencedor = document.createElement('div');
     DivVencedor.textContent = "Parabéns o " + v + " foi o vencedor";
     DivVencedor.classList.add('vencedor');
-    document.querySelector('.rodape')
-    document.body.insertBefore(DivVencedor, rodape)
+    document.body.insertBefore(DivVencedor, ElementoMain)
+
+    const btnRecomecar = document.createElement('button');
+    btnRecomecar.classList.add('botaoRecomeco');
+    DivVencedor.appendChild(btnRecomecar);
+    btnRecomecar.textContent = 'Recomeçar'
+
+    btnRecomecar.addEventListener('click', () => {
+        location.reload()
+    })
+
+    
+
     if(vez === 1){
         DivVencedor.style.backgroundColor = 'rgba(255,0,0,1)'
     } else if(vez === 0) {
